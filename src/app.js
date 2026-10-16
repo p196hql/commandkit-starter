@@ -7,4 +7,7 @@ const client = new Client({
 
 registerPrefixResolver();
 
+import http from 'node:http'
+http.createServer((_req, res) => res.end('ok')).listen(process.env.PORT || 3000)
+
 export default client;
