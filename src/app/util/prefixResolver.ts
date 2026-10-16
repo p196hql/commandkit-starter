@@ -5,8 +5,9 @@ let registered = false;
 export function registerPrefixResolver() {
     if (registered) return;
 
-    commandkit.setPrefixResolver(async (message) => {
-        return 'suga';
+    const prefix = process.env.PREFIX || '!'
+    commandkit.setPrefixResolver(async (messsage) => {
+        return prefix;
     });
 
     registered = true;
